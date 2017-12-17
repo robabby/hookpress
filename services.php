@@ -12,7 +12,7 @@ function hookpress_ajax_get_fields() {
 	$fields = array();
 	if (is_array($args)) {
 		foreach ($args as $arg) {
-			if (preg_match('[A-Z]+',$arg))
+			if (preg_match('/[A-Z]+/i', $arg))
 				$fields = array_merge($fields,hookpress_get_fields($arg));
 			else
 				$fields[] = $arg;
